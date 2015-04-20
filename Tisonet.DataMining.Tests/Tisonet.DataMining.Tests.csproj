@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9CF84984-57CA-4190-8AE5-7EF587DB5799}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tisonet.DataMining.Tests</RootNamespace>
+    <AssemblyName>Tisonet.DataMining.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\Libs\NUNit\NUnit-2.6.2\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Tisonet.DataMining\Properties\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="FrequentItemsets\AprioriTests.cs" />
+    <Compile Include="FrequentItemsets\ConditionalFPTreeTests.cs" />
+    <Compile Include="FrequentItemsets\FPGrowthTests.cs" />
+    <Compile Include="FrequentItemsets\FPTreeTests.cs" />
+    <Compile Include="FrequentItemsets\ItemsetsTests.cs" />
+    <Compile Include="FrequentItemsets\RandomTransactionDatabaseTests.cs" />
+    <Compile Include="FrequentItemsets\SmallTransactionDatabase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tisonet.DataMining.DataSets\Tisonet.DataMining.DataSets.csproj">
+      <Project>{7f139169-0ec4-4c6d-a42a-6abd217cedcf}</Project>
+      <Name>Tisonet.DataMining.DataSets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tisonet.DataMining.FrequentItemsets\Tisonet.DataMining.FrequentItemsets.csproj">
+      <Project>{3b28b0b8-b9d9-4b5d-a83d-595fe8268cfe}</Project>
+      <Name>Tisonet.DataMining.FrequentItemsets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tisonet.DataMining\Tisonet.DataMining.csproj">
+      <Project>{6e13f126-1b54-46a4-916f-7397bd2d9c58}</Project>
+      <Name>Tisonet.DataMining</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
